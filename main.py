@@ -22,6 +22,8 @@ code_prompt = PromptTemplate(
 code_chain = LLMChain(
   llm=llm,
   prompt=code_prompt,
+  # rename output from 'text' to 'code'
+  output_key="code"
 )
 
 result = code_chain({
